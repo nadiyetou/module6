@@ -1,0 +1,53 @@
+h1 {
+    color: blue;
+    font-size: 40px;
+    text-align:center;
+  }
+  
+  
+  .name {
+    text-align: center;
+    display: inline;
+    padding: 20px;
+    background: lightblue;
+    width: 100px;
+    margin: 0 100px 0 100px; /* Like a watch. T R B L */
+    font-size: 30px;
+  }
+  
+  .name a {
+    color: black;
+    text-decoration: none;
+  
+  }
+  
+  .name a:hover{
+    background-color: black;
+    color: white;
+    padding: 20px;
+    border-radius: 25px 0 25px 0;
+  }
+  
+  ul {
+      background: lightblue;
+      width: 100%;
+      padding: 20px;
+    text-align:center;
+  }
+  
+  
+  marquee {
+    color: navy;
+    background-color: skyblue;
+    border: 10px dashed white;
+    border-radius: 10px;
+    padding: 30px;
+    font-size: 20px;
+  }
+  
+  .attention {
+    font-weight: bold;
+  }
+  
+  
+  
