@@ -84,6 +84,9 @@ foreach ($items as $linkName => $fileName)
 </ul>
 
 <?php
+
+include 'functions.php';  // Include the functions file
+
 session_start();
 
 // Let's pretend the user has logged in and their user ID is stored in the session
@@ -121,26 +124,26 @@ $result = mysqli_query($connection, "SELECT posts.*, users.firstName, users.last
                                      FROM posts INNER JOIN users 
                                      ON posts.userId = users.userId");
 
-function getDynamicDateTimeDisplay($date, $time) {
-    $postDateTime = new DateTime($date . ' ' . $time);
-    $currentDateTime = new DateTime();
+// function getDynamicDateTimeDisplay($date, $time) {
+//     $postDateTime = new DateTime($date . ' ' . $time);
+//     $currentDateTime = new DateTime();
     
-    $interval = $postDateTime->diff($currentDateTime);
+//     $interval = $postDateTime->diff($currentDateTime);
     
-    if ($interval->y >= 1) {
-        return $postDateTime->format('Y-m-d H:i:s');
-    } else if ($interval->m >= 1 || $interval->d >= 7) {
-        return $postDateTime->format('M j');
-    } else if ($interval->d >= 1) {
-        return $interval->d == 1 ? 'Yesterday' : $interval->d . ' days ago';
-    } else if ($interval->h >= 1) {
-        return $interval->h == 1 ? '1 hour ago' : $interval->h . ' hours ago';
-    } else if ($interval->i >= 1) {
-        return $interval->i == 1 ? '1 minute ago' : $interval->i . ' minutes ago';
-    } else {
-        return 'Just now';
-    }
-}
+//     if ($interval->y >= 1) {
+//         return $postDateTime->format('Y-m-d H:i:s');
+//     } else if ($interval->m >= 1 || $interval->d >= 7) {
+//         return $postDateTime->format('M j');
+//     } else if ($interval->d >= 1) {
+//         return $interval->d == 1 ? 'Yesterday' : $interval->d . ' days ago';
+//     } else if ($interval->h >= 1) {
+//         return $interval->h == 1 ? '1 hour ago' : $interval->h . ' hours ago';
+//     } else if ($interval->i >= 1) {
+//         return $interval->i == 1 ? '1 minute ago' : $interval->i . ' minutes ago';
+//     } else {
+//         return 'Just now';
+//     }
+// }
 
 ?>
 
